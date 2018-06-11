@@ -13,8 +13,8 @@ import java.nio.file.Paths;
 
 public class main {
 
-	private static String WD;  //TODO Change to WD
-	final static File SD = new File("/Users/tucker/Desktop/DCIM"); //TODO Change to SD card
+	private static String WD; 
+	final static File SD = new File("/EOS_DIGITAL/DCIM");
 	private static String transfer_folder;
 	private static int moved;
 	private static int total_files;
@@ -27,7 +27,7 @@ public class main {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Destination Folder: ");
 		transfer_folder = input.nextLine();
-		WD = "/Users/tucker/Documents/Test/" + transfer_folder + "/";
+		WD = "/WD" + transfer_folder + "/";
 		input.close();
 
 		final Path wd_path = Paths.get(WD);
@@ -63,7 +63,7 @@ public class main {
 
 			// Only move .mov files
 			if(fileCurrentName.lastIndexOf(".") != -1 && fileCurrentName.lastIndexOf(".") != 0 &&
-					fileCurrentName.substring(fileCurrentName.lastIndexOf(".")+1).equalsIgnoreCase("mp4")) { //TODO CHANGE TO MOV
+					fileCurrentName.substring(fileCurrentName.lastIndexOf(".")+1).equalsIgnoreCase("mov")) {
 				String folderName = StringUtils.substringBetween(fileCurrentName, " ", "MVI");
 				Path destinationDir = Paths.get(WD + folderName.trim());
 
