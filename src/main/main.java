@@ -1,3 +1,4 @@
+package main;
 import java.util.Scanner;
 
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
@@ -20,6 +21,13 @@ public class main {
 	private static int total_files;
 	
 	public static void main(String[] args) {
+		try {
+			Runtime.getRuntime().exec("/usr/bin/open -a Terminal /Users/tucker/Desktop/TransferWeddingVideos.jar");
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
 		// Path of folder where files are located
 		File[] sd_subdirs = SD.listFiles((FileFilter) DirectoryFileFilter.DIRECTORY);
 
